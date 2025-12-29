@@ -51,10 +51,10 @@ export default function Problem() {
                 >
                     <span className="text-red-500 font-black tracking-[0.25em] text-[10px] uppercase mb-6 block">Le Problème</span>
                     <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-8 leading-[1.1]">
-                        Votre hôtel perd de l'argent <br /> sans même le savoir.
+                        Votre hôtel perd de l'argent sans même le savoir.
                     </h2>
                     <p className="text-xl text-zinc-400 leading-relaxed font-medium">
-                        L'absence de réponse immédiate coûte actuellement à l'Hôtel Kyrline entre <span className="text-white font-bold">20% et 40%</span> de ses réservations potentielles.
+                        L'absence de réponse immédiate peut coûter à l'Hôtel Kyrline entre <span className="text-white font-bold">20% et 40%</span> de ses réservations potentielles.
                     </p>
                 </motion.div>
 

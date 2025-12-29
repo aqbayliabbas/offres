@@ -16,19 +16,30 @@ export default function ChatbotDemo() {
     const [visibleMessages, setVisibleMessages] = useState<number>(0);
     const [isTyping, setIsTyping] = useState<boolean>(false);
     const containerRef = useRef(null);
+    const scrollRef = useRef<HTMLDivElement>(null);
     const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+
+    // Auto-scroll to bottom
+    useEffect(() => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+        }
+    }, [visibleMessages, isTyping]);
 
     useEffect(() => {
         if (!isInView) return;
 
         if (visibleMessages < conversation.length) {
             if (conversation[visibleMessages].role === "bot") {
-                setIsTyping(true);
-                const timer = setTimeout(() => {
-                    setIsTyping(false);
-                    setVisibleMessages((prev) => prev + 1);
-                }, 1500);
-                return () => clearTimeout(timer);
+                const typingTimer = setTimeout(() => {
+                    setIsTyping(true);
+                    const appearTimer = setTimeout(() => {
+                        setIsTyping(false);
+                        setVisibleMessages((prev) => prev + 1);
+                    }, 1800);
+                    return () => clearTimeout(appearTimer);
+                }, 600);
+                return () => clearTimeout(typingTimer);
             } else {
                 const timer = setTimeout(() => {
                     setVisibleMessages((prev) => prev + 1);
@@ -41,34 +52,49 @@ export default function ChatbotDemo() {
         }
     }, [visibleMessages, isInView]);
 
+    const springConfig = {
+        type: "spring",
+        stiffness: 400,
+        damping: 28,
+        mass: 0.8
+    } as const;
+
     return (
-        <div ref={containerRef} className="w-full max-w-[360px] mx-auto bg-zinc-900 rounded-3xl shadow-2xl border border-zinc-800 overflow-hidden">
-            <div className="bg-zinc-800 p-4 flex items-center gap-3 border-b border-zinc-700">
-                <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-black text-xs">
-                    AI
+        <div ref={containerRef} className="w-full max-w-[380px] mx-auto bg-zinc-900 rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.6)] border border-white/5 overflow-hidden backdrop-blur-xl">
+            {/* Header style Apple */}
+            <div className="bg-zinc-800/80 backdrop-blur-md p-5 flex items-center gap-4 border-b border-white/5">
+                <div className="relative">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
+                        <span className="text-white font-black text-xs tracking-tighter">AI</span>
+                    </div>
+                    <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-4 border-zinc-800 rounded-full" />
                 </div>
                 <div>
-                    <h3 className="text-white font-bold text-sm">Assistant Kyrline</h3>
-                    <div className="flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                        <p className="text-zinc-400 text-[10px] font-bold uppercase tracking-wider">En ligne 24h/24</p>
-                    </div>
+                    <h3 className="text-white font-black text-[13px] tracking-tight">Assistant Hôtel Kyrline</h3>
+                    <p className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest mt-0.5">Actif maintenant</p>
                 </div>
             </div>
-            <div className="p-4 space-y-4 h-[400px] overflow-y-auto bg-black/50 flex flex-col scrollbar-hide">
-                <AnimatePresence initial={false}>
+
+            {/* Zone de messages */}
+            <div
+                ref={scrollRef}
+                className="p-6 space-y-4 h-[420px] overflow-y-auto bg-black/40 flex flex-col scroll-smooth scrollbar-hide"
+            >
+                <AnimatePresence mode="popLayout">
                     {conversation.slice(0, visibleMessages).map((msg, idx) => (
                         <motion.div
-                            key={`${idx}-${visibleMessages}`}
-                            initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            transition={{ duration: 0.4, ease: "easeOut" }}
+                            key={`${idx}-${msg.text}`}
+                            layout
+                            initial={{ opacity: 0, scale: 0.8, y: 20, originX: msg.role === "client" ? 1 : 0 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
+                            transition={springConfig}
                             className={`flex ${msg.role === "client" ? "justify-end" : "justify-start"}`}
                         >
                             <div
-                                className={`max-w-[85%] p-3.5 rounded-2xl text-sm font-medium leading-relaxed ${msg.role === "client"
-                                    ? "bg-blue-600 text-white rounded-br-none"
-                                    : "bg-zinc-800 text-zinc-200 rounded-bl-none"
+                                className={`max-w-[85%] px-5 py-3 rounded-[1.4rem] text-[13px] font-medium leading-relaxed shadow-sm ${msg.role === "client"
+                                        ? "bg-blue-600 text-white rounded-br-none shadow-blue-500/10"
+                                        : "bg-zinc-800 text-zinc-100 rounded-bl-none shadow-black/20"
                                     }`}
                             >
                                 {msg.text}
@@ -76,25 +102,47 @@ export default function ChatbotDemo() {
                         </motion.div>
                     ))}
                 </AnimatePresence>
+
                 {isTyping && (
                     <motion.div
-                        initial={{ opacity: 0, y: 5 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="flex justify-start"
+                        layout
+                        initial={{ opacity: 0, scale: 0.8, y: 10, originX: 0 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={springConfig}
+                        className="flex justify-start pt-2"
                     >
-                        <div className="bg-zinc-800 p-3.5 rounded-2xl rounded-bl-none flex items-center gap-1">
-                            <span className="w-1.5 h-1.5 bg-zinc-500 rounded-full animate-bounce" />
-                            <span className="w-1.5 h-1.5 bg-zinc-500 rounded-full animate-bounce delay-75" />
-                            <span className="w-1.5 h-1.5 bg-zinc-500 rounded-full animate-bounce delay-150" />
+                        <div className="bg-zinc-800 px-5 py-4 rounded-[1.5rem] rounded-bl-none flex items-center gap-1.5 shadow-sm shadow-black/20">
+                            {[0, 1, 2].map((i) => (
+                                <motion.span
+                                    key={i}
+                                    animate={{
+                                        opacity: [0.4, 1, 0.4],
+                                        y: [0, -4, 0]
+                                    }}
+                                    transition={{
+                                        duration: 0.6,
+                                        repeat: Infinity,
+                                        delay: i * 0.15,
+                                        ease: "easeInOut"
+                                    }}
+                                    className="w-1.5 h-1.5 bg-zinc-400 rounded-full"
+                                />
+                            ))}
                         </div>
                     </motion.div>
                 )}
             </div>
-            <div className="p-3 bg-zinc-900 border-t border-zinc-800">
-                <div className="h-10 bg-black/30 rounded-xl px-4 flex items-center text-zinc-600 text-[10px] font-bold uppercase tracking-widest">
-                    Tapez un message...
+
+            {/* Input style Apple */}
+            <div className="p-5 bg-zinc-900 border-t border-white/5">
+                <div className="h-12 bg-white/5 rounded-2xl px-5 flex items-center justify-between group cursor-text transition-colors hover:bg-white/10">
+                    <span className="text-zinc-500 text-[11px] font-bold uppercase tracking-widest">Message...</span>
+                    <div className="w-8 h-8 rounded-xl bg-zinc-800 flex items-center justify-center">
+                        <div className="w-3 h-3 border-t-2 border-r-2 border-zinc-600 rotate-[-45deg] translate-y-0.5" />
+                    </div>
                 </div>
             </div>
         </div>
     );
 }
+
