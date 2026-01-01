@@ -55,7 +55,7 @@ export default function Problem() {
                         Votre hôtel perd de l'argent sans même le savoir.
                     </h2>
                     <p className="text-xl text-zinc-500 leading-relaxed font-medium">
-                        L'absence de réponse immédiate peut coûter à l'Hôtel Kyrline entre <span className="text-[#1D1D1F] font-semibold">20% et 40%</span> de ses réservations potentielles.
+                        L'absence de réponse immédiate peut coûter à votre établissement entre <span className="text-[#1D1D1F] font-semibold">20% et 40%</span> de ses réservations potentielles.
                     </p>
                 </motion.div>
 

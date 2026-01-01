@@ -37,7 +37,7 @@ export default function Offer() {
                                 </div>
                             </div>
 
-                            <h2 className="text-4xl md:text-5xl font-semibold mb-6 tracking-tight text-[#1D1D1F]">Exclusivité <br /> Hôtel Kyrline.</h2>
+                            <h2 className="text-4xl md:text-5xl font-semibold mb-6 tracking-tight text-[#1D1D1F]">Exclusivité <br /> Partenaires.</h2>
                             <p className="text-zinc-500 font-medium text-lg mb-12 max-w-sm leading-relaxed">
                                 Bénéficiez du statut de pionnier et de notre tarif de lancement exceptionnel.
                             </p>

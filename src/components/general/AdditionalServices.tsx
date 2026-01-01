@@ -13,7 +13,7 @@ const services = [
     {
         icon: Camera,
         title: "Shooting & Film",
-        description: "Capturer l'essence de l'Hôtel Kyrline avec des visuels cinématographiques et une photographie de luxe.",
+        description: "Capturer l'essence de votre établissement avec des visuels cinématographiques et une photographie de luxe.",
         features: ["Vidéos cinématographiques", "Photos d'Intérieur", "Vidéos Promotionnelles"]
     },
     {
@@ -69,7 +69,7 @@ export default function AdditionalServices() {
                         <motion.div
                             key={idx}
                             variants={cardVariants}
-                            whileHover={{ y: -8, shadow: "0 20px 40px rgba(0,0,0,0.08)" }}
+                            whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }}
                             className="p-10 rounded-[32px] bg-[#F5F5F7] border border-black/5 transition-all duration-300 group relative overflow-hidden"
                         >
                             <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-[#0071e3] mb-8 shadow-sm">

@@ -126,7 +126,7 @@ export default function Solution() {
                             </div>
                             <div className="space-y-2">
                                 <div className="flex justify-between text-[11px] font-bold text-[#0071e3] uppercase tracking-wider">
-                                    <span>Solution Kyrline</span>
+                                    <span>Notre Solution</span>
                                     <span>30 Secondes</span>
                                 </div>
                                 <div className="h-3 bg-white rounded-full overflow-hidden shadow-inner">
