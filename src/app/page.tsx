@@ -30,18 +30,14 @@ export default function GeneralOffer() {
 
       <footer className="py-24 bg-[#F5F5F7] border-t border-black/5">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
-          <div className="flex items-center gap-12 mb-10 opacity-100 hover:opacity-100 transition-opacity duration-700">
-            <Image src="/wingo.svg" alt="Wingo Logo" width={100} height={24} className="h-5 md:h-6 w-auto brightness-0" />
-            <div className="h-5 w-[1px] bg-zinc-300" />
-            <Image src="/auren.svg" alt="Auren Logo" width={100} height={24} className="h-5 md:h-6 w-auto brightness-0" />
-          </div>
+
 
           <p className="text-zinc-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-4">
             Une Solution Conçue & Développée par l'Alliance Wingo x Auren
           </p>
 
           <p className="text-zinc-400 text-[10px] font-medium uppercase tracking-[0.2em]">
-            &copy; {new Date().getFullYear()} Système de Réservation Hôtelière • Tous droits réservés
+            &copy; {new Date().getFullYear()} Système de Réservation Intelligent • Tous droits réservés
           </p>
         </div>
       </footer>

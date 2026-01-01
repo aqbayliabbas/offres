@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Offre de service - Hôtel Kyrline",
-  description: "Transformez l'expérience de vos clients avec notre solution de réservation intelligente.",
+  title: "Solution de Réservation Intelligente hôtelière",
+  description: "Transformez l'expérience de vos clients avec une solution de réservation autonome pour votre établissement.",
   icons: {
     icon: "/wingo.svg",
   },
