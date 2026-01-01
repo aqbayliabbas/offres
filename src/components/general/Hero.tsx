@@ -78,10 +78,10 @@ export default function Hero() {
             >
                 <div className="relative w-full h-full">
                     <Image
-                        src="/hotel_facade_luxury_4_1767018874326.png"
+                        src="/Background.png"
                         alt="App Screen"
                         fill
-                        className="object-cover object-top rounded-t-[40px] shadow-[0_-20px_60px_rgba(0,0,0,0.1)] grayscale-[0.2]"
+                        className="object-cover object-top"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#F5F5F7] via-transparent to-transparent opacity-50" />
                 </div>
