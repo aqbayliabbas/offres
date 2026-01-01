@@ -12,6 +12,12 @@ const hotels = [
     location: "Bouira",
     status: "Offre Disponible",
     slug: "kyrline",
+  },
+  {
+    name: "Offre Générale",
+    location: "Global",
+    status: "Offre Disponible",
+    slug: "generale",
   }
 ];
 
