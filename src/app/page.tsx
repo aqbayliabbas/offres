@@ -9,6 +9,7 @@ import FAQ from "@/components/general/FAQ";
 import Contact from "@/components/general/Contact";
 import OnboardingModal from "@/components/general/OnboardingModal";
 import Customizable from "@/components/general/Customizable";
+import FeedbackForm from "@/components/general/FeedbackForm";
 
 import Image from "next/image";
 
@@ -27,6 +28,7 @@ export default function Home() {
       <GallerySlider />
       <AdditionalServices />
       <FAQ />
+      <FeedbackForm />
       <Contact />
 
       <footer className="py-12 sm:py-16 md:py-24 bg-[#F5F5F7] border-t border-black/5">

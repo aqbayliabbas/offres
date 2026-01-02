@@ -1,20 +1,24 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
-    Star,
+    ChevronDown,
     Building2,
-    Eye,
-    X,
+    Calendar,
+    Star,
     Wifi,
     Utensils,
     Car,
     Waves,
     Shield,
     ArrowRight,
-    Info
-} from 'lucide-react'
+    MapPin,
+    ArrowUpRight,
+    Trash2
+} from "lucide-react";
+import { format } from "date-fns";
+import { fr } from "date-fns/locale";
 
 const SERVICE_ICONS: Record<string, any> = {
     'Wifi Gratuit': Wifi,
@@ -24,126 +28,155 @@ const SERVICE_ICONS: Record<string, any> = {
     'Service de sécurité': Shield,
 }
 
-export default function HotelCard({ hotel }: { hotel: any }) {
-    const [showDetails, setShowDetails] = useState(false)
-
+export default function HotelCard({ hotel, isOpen, onToggle, onDelete }: { hotel: any, isOpen: boolean, onToggle: () => void, onDelete: () => void }) {
     return (
-        <>
-            <div className="bg-white rounded-[32px] p-6 border border-black/5 hover:border-[#0071e3]/30 transition-all group flex items-center justify-between shadow-sm">
+        <div className={`group relative bg-white rounded-xl border transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isOpen ? 'border-black/10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)]' : 'border-black/5 hover:border-black/10 hover:shadow-xl hover:-translate-y-1'}`}>
+            {/* Background Glow Effect */}
+            <div className={`absolute inset-0 rounded-xl transition-opacity duration-500 opacity-0 pointer-events-none group-hover:opacity-100 ${isOpen ? 'opacity-30' : ''}`}
+                style={{ background: 'radial-gradient(1200px circle at var(--x) var(--y), rgba(0,113,227,0.03), transparent 40%)' }}
+            />
+
+            {/* Header Area */}
+            <div
+                onClick={onToggle}
+                className="w-full relative z-10 p-6 md:p-8 flex items-center justify-between text-left cursor-pointer select-none"
+            >
                 <div className="flex items-center gap-6">
-                    <div className="w-12 h-12 bg-[#F5F5F7] rounded-2xl flex items-center justify-center text-zinc-400 group-hover:text-[#0071e3] transition-colors">
-                        <Building2 className="w-6 h-6" />
+                    {/* Dynamic Icon Box */}
+                    <div className="relative">
+                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-black text-white scale-110 rotate-[10deg]' : 'bg-[#F5F5F7] text-zinc-400 group-hover:bg-[#0071e3]/10 group-hover:text-[#0071e3]'}`}>
+                            <Building2 className={`w-7 h-7 transition-transform duration-500 ${isOpen ? 'scale-110' : ''}`} />
+                        </div>
                     </div>
+
                     <div>
-                        <h4 className="text-lg font-bold tracking-tight leading-tight">{hotel.hotel_name}</h4>
-                        <div className="flex gap-1 mt-1">
-                            {Array.from({ length: hotel.stars_count }).map((_, i) => (
-                                <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                            ))}
+                        <div className="flex items-center gap-3 mb-1">
+                            <h4 className="text-xl font-bold tracking-tight text-black leading-none">
+                                {hotel.hotel_name}
+                            </h4>
+                            {isOpen ? (
+                                <motion.span
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    className="text-[9px] font-black text-[#0071e3] uppercase tracking-[0.2em] px-2.5 py-1 bg-[#0071e3]/5 rounded-full border border-[#0071e3]/10"
+                                >
+                                    Vue Active
+                                </motion.span>
+                            ) : (
+                                <div className="flex gap-0.5">
+                                    {Array.from({ length: hotel.stars_count }).map((_, i) => (
+                                        <Star key={i} className="w-2.5 h-2.5 fill-yellow-400 text-yellow-400" />
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                        <div className="flex items-center gap-4 text-zinc-400">
+                            <div className="flex items-center gap-1.5 font-medium text-xs">
+                                <Calendar className="w-3.5 h-3.5" />
+                                <span>{format(new Date(hotel.created_at), 'dd MMMM yyyy', { locale: fr })}</span>
+                            </div>
+                            <div className="w-1.5 h-1.5 rounded-full bg-zinc-100" />
+                            <div className="flex items-center gap-1.5 font-medium text-xs uppercase tracking-widest text-[9px] font-black">
+                                {hotel.services?.length || 0} Services
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <button
-                    onClick={() => setShowDetails(true)}
-                    className="p-3 bg-[#F5F5F7] hover:bg-[#0071e3] hover:text-white rounded-2xl transition-all flex items-center gap-2 group/btn"
-                >
-                    <span className="text-[10px] font-bold uppercase tracking-widest px-2 hidden md:block">Détails</span>
-                    <Eye className="w-5 h-5" />
-                </button>
+                <div className="flex items-center gap-4">
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onDelete();
+                        }}
+                        className="w-12 h-12 rounded-full flex items-center justify-center bg-red-50 text-red-400 hover:bg-red-500 hover:text-white transition-all duration-300 border border-red-100 z-20"
+                    >
+                        <Trash2 className="w-5 h-5" />
+                    </button>
+
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-black text-white rotate-180' : 'bg-white border border-black/5 text-zinc-400 shadow-sm group-hover:shadow-md'}`}>
+                        <ChevronDown className="w-5 h-5" />
+                    </div>
+                </div>
             </div>
 
-            {/* Details Modal */}
+            {/* Expandable Details Section */}
             <AnimatePresence>
-                {showDetails && (
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            onClick={() => setShowDetails(false)}
-                            className="absolute inset-0 bg-white/60 backdrop-blur-xl"
-                        />
+                {isOpen && (
+                    <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                        <div className="px-8 pb-10">
+                            {/* Visual Divider */}
+                            <div className="h-px w-full bg-gradient-to-r from-transparent via-black/5 to-transparent mb-10" />
 
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                            className="relative w-full max-w-lg bg-white rounded-[40px] border border-black/5 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] overflow-hidden"
-                        >
-                            <div className="p-8 md:p-10">
-                                <div className="flex justify-between items-start mb-10">
-                                    <div className="space-y-2">
-                                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#0071e3]">Fiche Établissement</span>
-                                        <h3 className="text-3xl font-semibold tracking-tighter">{hotel.hotel_name}</h3>
-                                        <div className="flex gap-1">
-                                            {Array.from({ length: hotel.stars_count }).map((_, i) => (
-                                                <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                                            ))}
-                                        </div>
+                            <div className="grid gap-8">
+                                {/* Services Grid */}
+                                <div className="space-y-4">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-1 h-4 bg-[#0071e3] rounded-full" />
+                                        <h5 className="text-[10px] font-black uppercase tracking-[0.2em]">Équipements & Services</h5>
                                     </div>
-                                    <button
-                                        onClick={() => setShowDetails(false)}
-                                        className="p-2 hover:bg-zinc-100 rounded-full transition-colors"
-                                    >
-                                        <X className="w-6 h-6 text-zinc-400" />
-                                    </button>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                                        {hotel.services?.map((s: string) => {
+                                            const Icon = SERVICE_ICONS[s] || ArrowRight;
+                                            return (
+                                                <div key={s} className="px-4 py-3 bg-[#F5F5F7] rounded-lg text-[10px] font-bold border border-black/5 flex items-center gap-3 transition-colors hover:bg-[#0071e3]/5 hover:border-[#0071e3]/10 group/item">
+                                                    <Icon className="w-4 h-4 text-[#0071e3] transition-transform group-hover/item:scale-110" />
+                                                    <span className="text-zinc-700 truncate">{s}</span>
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
                                 </div>
 
-                                <div className="space-y-8">
+                                {/* Presentation Text */}
+                                {hotel.description && (
                                     <div className="space-y-4">
                                         <div className="flex items-center gap-2">
-                                            <Info className="w-4 h-4 text-[#0071e3]" />
-                                            <p className="text-[10px] font-bold uppercase tracking-widest text-[#1D1D1F]">Services Proposés</p>
+                                            <div className="w-1 h-4 bg-black rounded-full" />
+                                            <h5 className="text-[10px] font-black uppercase tracking-[0.2em]">À propos de l'établissement</h5>
                                         </div>
-                                        <div className="flex flex-wrap gap-2">
-                                            {hotel.services?.map((s: string) => {
-                                                const Icon = SERVICE_ICONS[s] || ArrowRight;
-                                                return (
-                                                    <span key={s} className="px-4 py-2.5 bg-[#F5F5F7] rounded-2xl text-xs font-bold border border-black/5 flex items-center gap-3">
-                                                        <Icon className="w-4 h-4 text-[#0071e3]" />
-                                                        {s}
-                                                    </span>
-                                                )
-                                            })}
+                                        <div className="relative p-6 bg-[#F5F5F7] rounded-xl border border-black/5 italic text-sm text-zinc-600 leading-relaxed">
+                                            "{hotel.description}"
+                                            <div className="absolute top-4 right-6 opacity-10">
+                                                <Star className="w-10 h-10 text-black" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* Bottom Meta Section */}
+                                <div className="pt-6 border-t border-black/5 flex items-center justify-between">
+                                    <div className="flex items-center gap-4">
+                                        <div className="flex flex-col">
+                                            <span className="text-[9px] font-black text-zinc-400 uppercase tracking-widest">Classement</span>
+                                            <div className="flex gap-0.5 mt-1">
+                                                {Array.from({ length: hotel.stars_count }).map((_, i) => (
+                                                    <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <div className="w-px h-8 bg-black/5" />
+                                        <div className="flex flex-col">
+                                            <span className="text-[9px] font-black text-zinc-400 uppercase tracking-widest">Référence</span>
+                                            <span className="text-[10px] font-bold text-black mt-1">HTL-{hotel.id.slice(0, 8).toUpperCase()}</span>
                                         </div>
                                     </div>
 
-                                    {hotel.description && (
-                                        <div className="space-y-4">
-                                            <div className="flex items-center gap-2">
-                                                <Info className="w-4 h-4 text-[#0071e3]" />
-                                                <p className="text-[10px] font-bold uppercase tracking-widest text-[#1D1D1F]">Description / Message</p>
-                                            </div>
-                                            <p className="text-sm text-zinc-600 leading-relaxed bg-[#F5F5F7] p-4 rounded-2xl border border-black/5">
-                                                {hotel.description}
-                                            </p>
-                                        </div>
-                                    )}
-
-                                    <div className="pt-8 border-t border-black/5 flex items-center justify-between">
-                                        <div>
-                                            <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-1">Identifiant Propriétaire</p>
-                                            <p className="text-xs font-medium text-zinc-600 font-mono">{hotel.user_id || 'Anonyme'}</p>
-                                        </div>
-                                        <div>
-                                            <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-1">Date Inscription</p>
-                                            <p className="text-xs font-medium text-zinc-600">{new Date(hotel.created_at).toLocaleDateString()}</p>
-                                        </div>
+                                    <div className="text-right">
+                                        <span className="text-[9px] font-black text-zinc-400 uppercase tracking-widest block mb-1">Propriétaire</span>
+                                        <span className="text-xs font-bold text-black">{hotel.user_id ? "Client Enregistré" : "Prospect Anonyme"}</span>
                                     </div>
                                 </div>
-
-                                <button
-                                    onClick={() => setShowDetails(false)}
-                                    className="w-full mt-10 py-5 bg-[#1D1D1F] text-white rounded-2xl font-bold text-sm hover:bg-black transition-all active:scale-[0.98]"
-                                >
-                                    Fermer la vue
-                                </button>
                             </div>
-                        </motion.div>
-                    </div>
+                        </div>
+                    </motion.div>
                 )}
             </AnimatePresence>
-        </>
-    )
+        </div>
+    );
 }

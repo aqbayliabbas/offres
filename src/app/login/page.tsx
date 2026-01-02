@@ -10,7 +10,7 @@ export default function LoginPage() {
             </div>
 
             <div className="w-full max-w-[440px] relative z-10">
-                <div className="bg-[#F5F5F7] border border-black/5 rounded-[40px] p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
+                <div className="bg-[#F5F5F7] border border-black/5 rounded-[40px] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
                     <div className="text-center mb-12">
 
                         <h1 className="text-4xl font-semibold tracking-tighter mb-3 leading-tight">
@@ -53,25 +53,12 @@ export default function LoginPage() {
                             <a href="#" className="text-xs font-semibold text-[#0071e3] hover:underline underline-offset-4">Oublié ?</a>
                         </div>
 
-                        <div className="pt-4 space-y-4">
+                        <div className="pt-4">
                             <button
                                 formAction={login}
                                 className="w-full py-4 bg-[#0071e3] text-white rounded-2xl font-semibold text-[15px] hover:bg-[#0077ed] active:scale-[0.98] transition-all shadow-lg shadow-[#0071e3]/20"
                             >
                                 Se connecter
-                            </button>
-
-                            <div className="relative py-4 flex items-center gap-4">
-                                <div className="h-px flex-1 bg-black/5"></div>
-                                <span className="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">OU</span>
-                                <div className="h-px flex-1 bg-black/5"></div>
-                            </div>
-
-                            <button
-                                formAction={signup}
-                                className="w-full py-4 bg-white text-[#1D1D1F] border border-black/5 rounded-2xl font-semibold text-[15px] hover:bg-zinc-50 active:scale-[0.98] transition-all"
-                            >
-                                Créer un compte
                             </button>
                         </div>
                     </form>
