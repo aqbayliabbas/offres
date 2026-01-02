@@ -40,3 +40,55 @@ body {
     display: none;
   }
 }
+
+/* Mobile-friendly global styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 640px) {
+  button, a, input, textarea, select {
+    min-height: 44px;
+  }
+  
+  /* Prevent horizontal overflow on mobile */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Better text readability on small screens */
+  p, li, span {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Smooth scrolling containers */
+.smooth-scroll {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* Fix for iOS fixed positioning issues */
+.fixed-safe {
+  position: fixed;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Prevent text selection on touch devices for interactive elements */
+.no-select {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Modal/popup scrollable area */
+.modal-scroll {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}

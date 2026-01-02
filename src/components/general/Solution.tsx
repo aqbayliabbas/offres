@@ -37,23 +37,23 @@ const textReveal: Variants = {
 
 export default function Solution() {
     return (
-        <section className="py-32 bg-[#F5F5F7] text-[#1D1D1F] overflow-hidden relative">
-            <div className="max-w-7xl mx-auto px-6">
+        <section className="py-16 sm:py-24 md:py-32 bg-[#F5F5F7] text-[#1D1D1F] overflow-hidden relative">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                     variants={textReveal}
-                    className="text-center mb-32"
+                    className="text-center mb-16 sm:mb-24 md:mb-32"
                 >
-                    <span className="text-[#0071e3] font-bold tracking-wider text-xs uppercase mb-4 block">La Solution</span>
-                    <h2 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-6">
+                    <span className="text-[#0071e3] font-bold tracking-wider text-xs uppercase mb-2 sm:mb-4 block">La Solution</span>
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-4 sm:mb-6 px-2 sm:px-0">
                         Une Technologie qui<span className="text-[#0071e3]"> change tout.</span>
                     </h2>
                 </motion.div>
 
                 {/* Feature 1: Chatbot */}
-                <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24 mb-40">
+                <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 md:gap-16 lg:gap-24 mb-20 sm:mb-28 md:mb-40">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -93,7 +93,7 @@ export default function Solution() {
                 </div>
 
                 {/* Feature 2: Reservation Express */}
-                <div className="flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24 mb-40">
+                <div className="flex flex-col lg:flex-row-reverse items-center gap-8 sm:gap-12 md:gap-16 lg:gap-24 mb-20 sm:mb-28 md:mb-40">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -146,10 +146,10 @@ export default function Solution() {
                         whileInView={{ opacity: 1, x: 0, scale: 1 }}
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         viewport={{ once: true }}
-                        className="flex-1 w-full bg-white rounded-[40px] aspect-square flex items-center justify-center p-10 md:p-20 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.06)]"
+                        className="flex-1 w-full bg-white rounded-[24px] sm:rounded-[40px] aspect-square flex items-center justify-center p-6 sm:p-10 md:p-20 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.06)]"
                     >
                         <div className="text-center">
-                            <span className="text-8xl font-semibold text-[#1D1D1F] tracking-tighter">
+                            <span className="text-5xl sm:text-6xl md:text-8xl font-semibold text-[#1D1D1F] tracking-tighter">
                                 <AnimatedCounter from={0} to={30} duration={0.8} />s
                             </span>
                             <p className="text-xs font-bold text-zinc-400 mt-2 uppercase tracking-widest">Rapidité Ultime</p>
@@ -158,7 +158,7 @@ export default function Solution() {
                 </div>
 
                 {/* Feature 3: Loyalty */}
-                <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
+                <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 md:gap-16 lg:gap-24">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -181,15 +181,15 @@ export default function Solution() {
                         viewport={{ once: true }}
                         className="flex-1 flex justify-center w-full"
                     >
-                        <div className="w-full max-w-[400px] bg-gradient-to-br from-[#1D1D1F] to-[#2C2C2E] p-10 rounded-[40px] shadow-2xl relative overflow-hidden text-white group">
+                        <div className="w-full max-w-[400px] bg-gradient-to-br from-[#1D1D1F] to-[#2C2C2E] p-6 sm:p-10 rounded-[24px] sm:rounded-[40px] shadow-2xl relative overflow-hidden text-white group">
 
                             <div className="relative z-10">
                                 <h4 className="text-lg font-semibold text-[#FF9500] mb-0.5 uppercase tracking-wide">Carte Club</h4>
-                                <p className="text-xs text-zinc-400 font-medium mb-16 tracking-wider uppercase">Membre Privilège</p>
+                                <p className="text-[10px] sm:text-xs text-zinc-400 font-medium mb-10 sm:mb-16 tracking-wider uppercase">Membre Privilège</p>
 
                                 <div className="space-y-5">
                                     <div className="flex justify-between items-end">
-                                        <span className="text-5xl font-semibold">450 <span className="text-sm font-medium text-zinc-500">Pts</span></span>
+                                        <span className="text-3xl sm:text-4xl md:text-5xl font-semibold">450 <span className="text-xs sm:text-sm font-medium text-zinc-500">Pts</span></span>
                                         <span className="text-[10px] font-bold text-zinc-500 uppercase">90% du Palier</span>
                                     </div>
                                     <div className="h-2 bg-white/10 rounded-full overflow-hidden">

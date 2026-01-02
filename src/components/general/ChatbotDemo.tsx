@@ -60,12 +60,12 @@ export default function ChatbotDemo() {
     } as const;
 
     return (
-        <div ref={containerRef} className="w-full max-w-[380px] mx-auto bg-white rounded-[2.5rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] border border-black/5 overflow-hidden">
+        <div ref={containerRef} className="w-full max-w-[320px] sm:max-w-[380px] mx-auto bg-white rounded-[1.5rem] sm:rounded-[2.5rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] border border-black/5 overflow-hidden">
             {/* Header style Apple */}
             <div className="bg-[#F5F5F7]/80 backdrop-blur-md p-5 flex items-center gap-4 border-b border-black/5">
                 <div className="relative">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#0071e3] to-[#0077ED] flex items-center justify-center shadow-lg shadow-blue-500/20">
-                        <span className="text-white font-heavy text-xs tracking-tighter">AI</span>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#0071e3] to-[#0077ED] flex items-center justify-center shadow-lg shadow-blue-500/20">
+                        <span className="text-white font-heavy text-[10px] sm:text-xs tracking-tighter">AI</span>
                     </div>
                     <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#34C759] border-4 border-[#F5F5F7] rounded-full" />
                 </div>
@@ -78,7 +78,7 @@ export default function ChatbotDemo() {
             {/* Zone de messages */}
             <div
                 ref={scrollRef}
-                className="p-6 space-y-4 h-[420px] overflow-y-auto bg-white flex flex-col scroll-smooth scrollbar-hide"
+                className="p-4 sm:p-6 space-y-3 sm:space-y-4 h-[320px] sm:h-[420px] overflow-y-auto bg-white flex flex-col scroll-smooth scrollbar-hide"
             >
                 <AnimatePresence mode="popLayout">
                     {conversation.slice(0, visibleMessages).map((msg, idx) => (
@@ -92,7 +92,7 @@ export default function ChatbotDemo() {
                             className={`flex ${msg.role === "client" ? "justify-end" : "justify-start"}`}
                         >
                             <div
-                                className={`max-w-[85%] px-5 py-3 rounded-[1.2rem] text-[15px] leading-relaxed shadow-sm ${msg.role === "client"
+                                className={`max-w-[85%] px-4 sm:px-5 py-2.5 sm:py-3 rounded-[1rem] sm:rounded-[1.2rem] text-[13px] sm:text-[15px] leading-relaxed shadow-sm ${msg.role === "client"
                                     ? "bg-[#0071e3] text-white rounded-br-sm"
                                     : "bg-[#E9E9EB] text-[#1D1D1F] rounded-bl-sm"
                                     }`}

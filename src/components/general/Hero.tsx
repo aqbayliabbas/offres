@@ -24,32 +24,32 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative min-h-[90vh] flex flex-col items-center justify-between overflow-hidden bg-[#F5F5F7] text-[#1D1D1F] pt-32">
+        <section className="relative min-h-[80vh] sm:min-h-[90vh] flex flex-col items-center justify-between overflow-hidden bg-[#F5F5F7] text-[#1D1D1F] pt-20 sm:pt-32">
             <motion.div
-                className="z-10 text-center max-w-4xl mx-auto space-y-8 px-6"
+                className="z-10 text-center max-w-4xl mx-auto space-y-5 sm:space-y-8 px-4 sm:px-6"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
             >
                 <motion.div variants={itemVariants}>
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white border border-black/5 shadow-sm text-[11px] font-semibold tracking-wider uppercase mb-6 text-zinc-500">
+                    <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-white border border-black/5 shadow-sm text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase mb-4 sm:mb-6 text-zinc-500">
                         Offre Exclusive
                     </span>
-                    <h1 className="text-6xl md:text-8xl font-semibold tracking-tight leading-[1.05] bg-gradient-to-b from-black to-zinc-500 bg-clip-text text-transparent pb-2">
-                        Le Futur de <br /> l'Hôtellerie.
+                    <h1 className="text-4xl sm:text-6xl md:text-8xl font-semibold tracking-tight leading-[1.05] bg-gradient-to-b from-black to-zinc-500 bg-clip-text text-transparent pb-2">
+                        Le Futur de <br className="hidden sm:block" /><span className="sm:hidden"> </span>l'Hôtellerie.
                     </h1>
                 </motion.div>
 
                 <motion.p
                     variants={itemVariants}
-                    className="text-xl md:text-2xl text-zinc-600 max-w-2xl mx-auto font-medium leading-relaxed"
+                    className="text-base sm:text-xl md:text-2xl text-zinc-600 max-w-2xl mx-auto font-medium leading-relaxed px-2 sm:px-0"
                 >
                     Récupérez 40% de vos clients perdus avec une solution de réservation autonome, intelligente et ultra-rapide.
                 </motion.p>
 
                 <motion.div
                     variants={itemVariants}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-2 sm:pt-4"
                 >
                     <motion.button
                         whileHover={{ scale: 1.02 }}
@@ -74,7 +74,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full max-w-6xl h-[40vh] md:h-[600px] mt-16 relative z-0"
+                className="w-full max-w-6xl h-[30vh] sm:h-[40vh] md:h-[600px] mt-8 sm:mt-16 relative z-0"
             >
                 <div className="relative w-full h-full">
                     <Image

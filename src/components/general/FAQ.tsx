@@ -31,9 +31,9 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="py-32 bg-[#F5F5F7] text-[#1D1D1F]">
-            <div className="max-w-3xl mx-auto px-6">
-                <h2 className="text-4xl font-semibold tracking-tight mb-16 text-center">Questions <span className="text-[#0071e3]">Fréquentes.</span></h2>
+        <section className="py-16 sm:py-24 md:py-32 bg-[#F5F5F7] text-[#1D1D1F]">
+            <div className="max-w-3xl mx-auto px-4 sm:px-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-10 sm:mb-16 text-center">Questions <span className="text-[#0071e3]">Fréquentes.</span></h2>
                 <div className="space-y-4">
                     {faqs.map((faq, idx) => (
                         <div
@@ -43,9 +43,9 @@ export default function FAQ() {
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                                className="w-full flex items-center justify-between p-8 text-left"
+                                className="w-full flex items-center justify-between p-5 sm:p-6 md:p-8 text-left"
                             >
-                                <span className="font-semibold text-lg pr-8 text-[#1D1D1F]">{faq.q}</span>
+                                <span className="font-semibold text-base sm:text-lg pr-4 sm:pr-8 text-[#1D1D1F]">{faq.q}</span>
                                 {openIndex === idx ? (
                                     <Minus className="w-5 h-5 text-[#0071e3] shrink-0" />
                                 ) : (
@@ -61,7 +61,7 @@ export default function FAQ() {
                                         transition={{ duration: 0.3, ease: "easeInOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="p-8 pt-0 text-zinc-500 font-medium leading-relaxed">
+                                        <div className="p-5 sm:p-6 md:p-8 pt-0 text-zinc-500 font-medium leading-relaxed text-sm sm:text-base">
                                             {faq.a}
                                         </div>
                                     </motion.div>
