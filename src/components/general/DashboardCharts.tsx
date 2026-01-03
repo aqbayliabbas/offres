@@ -40,14 +40,14 @@ export default function DashboardCharts({ feedbacks }: { feedbacks: any[] }) {
         .sort((a, b) => b.value - a.value)
         .slice(0, 5);
 
-    const COLORS = ['#0071e3', '#000000', '#6366f1', '#a855f7', '#ec4899'];
+    const COLORS = ['#d3af37', '#000000', '#6366f1', '#a855f7', '#ec4899'];
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             {/* Momentum Chart */}
-            <div className="bg-white p-6 sm:p-10 rounded-[32px] border border-black/5 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,113,227,0.08)] hover:-translate-y-2 hover:scale-[1.01]">
+            <div className="bg-white p-6 sm:p-10 rounded-[32px] border border-black/5 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_20px_40px_rgba(211,175,55,0.08)] hover:-translate-y-2 hover:scale-[1.01]">
                 <div className="mb-8">
-                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#0071e3] mb-2">Acquisition</p>
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#d3af37] mb-2">Acquisition</p>
                     <h3 className="text-2xl font-bold tracking-tight text-black">Momentum des Leads</h3>
                 </div>
                 <div className="h-[280px] w-full">
@@ -55,8 +55,8 @@ export default function DashboardCharts({ feedbacks }: { feedbacks: any[] }) {
                         <AreaChart data={dailyData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                             <defs>
                                 <linearGradient id="colorCount" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#0071e3" stopOpacity={0.15} />
-                                    <stop offset="95%" stopColor="#0071e3" stopOpacity={0} />
+                                    <stop offset="5%" stopColor="#d3af37" stopOpacity={0.15} />
+                                    <stop offset="95%" stopColor="#d3af37" stopOpacity={0} />
                                 </linearGradient>
                             </defs>
                             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
@@ -71,10 +71,10 @@ export default function DashboardCharts({ feedbacks }: { feedbacks: any[] }) {
                                 hide
                             />
                             <Tooltip
-                                cursor={{ stroke: '#0071e3', strokeWidth: 1 }}
+                                cursor={{ stroke: '#d3af37', strokeWidth: 1 }}
                                 contentStyle={{
                                     borderRadius: '12px',
-                                    border: '1px solid rgba(0,0,0,0.05)',
+                                    border: '1px solid rgba(211,175,55,0.05)',
                                     boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1)',
                                     fontSize: '11px',
                                     fontWeight: 'bold'
@@ -83,7 +83,7 @@ export default function DashboardCharts({ feedbacks }: { feedbacks: any[] }) {
                             <Area
                                 type="monotone"
                                 dataKey="count"
-                                stroke="#0071e3"
+                                stroke="#d3af37"
                                 strokeWidth={2.5}
                                 fillOpacity={1}
                                 fill="url(#colorCount)"

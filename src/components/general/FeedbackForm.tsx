@@ -30,7 +30,7 @@ const QUESTIONS = [
     },
     {
         id: 3,
-        question: "Quelles fonctionnalités de notre solution vous intéressent le plus ?",
+        question: "Quelles fonctionnalités de HOSTRA vous intéressent le plus ?",
         type: "cases_a_cocher",
         options: [
             "Chatbot intelligent 24/7",
@@ -174,7 +174,7 @@ export default function FeedbackForm() {
                     <motion.span
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="text-[#0071e3] font-black tracking-[0.3em] text-[10px] uppercase mb-4 block"
+                        className="text-[#d3af37] font-black tracking-[0.3em] text-[10px] uppercase mb-4 block"
                     >
                         QUESTIONNAIRE
                     </motion.span>
@@ -199,7 +199,7 @@ export default function FeedbackForm() {
                     <div className="flex justify-center mb-10">
                         <div className="w-32 h-1.5 bg-black/5 rounded-full overflow-hidden">
                             <motion.div
-                                className="h-full bg-[#0071e3] rounded-full"
+                                className="h-full bg-[#d3af37] rounded-full"
                                 initial={{ width: "0%" }}
                                 animate={{ width: `${(step / (QUESTIONS.length)) * 100}%` }}
                                 transition={{ type: "spring", damping: 25, stiffness: 100 }}
@@ -219,7 +219,7 @@ export default function FeedbackForm() {
                             >
                                 <div className="space-y-4">
                                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-white rounded-full border border-black/5 shadow-sm">
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-[#0071e3]">
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-[#d3af37]">
                                             Étape {step + 1} / {QUESTIONS.length}
                                         </span>
                                     </div>
@@ -236,7 +236,7 @@ export default function FeedbackForm() {
                                                 onChange={(e) => setFormData({ ...formData, [currentQuestion.field]: e.target.value })}
                                                 placeholder={currentQuestion.placeholder}
                                                 rows={5}
-                                                className="w-full px-8 py-6 bg-white border border-transparent rounded-[32px] text-lg text-black focus:border-[#0071e3] transition-all outline-none resize-none font-medium shadow-sm group-hover:shadow-md"
+                                                className="w-full px-8 py-6 bg-white border border-transparent rounded-[32px] text-lg text-black focus:border-[#d3af37] transition-all outline-none resize-none font-medium shadow-sm group-hover:shadow-md"
                                             />
                                         </div>
                                     )}
@@ -249,12 +249,12 @@ export default function FeedbackForm() {
                                                     onClick={() => setFormData({ ...formData, [currentQuestion.field]: option })}
                                                     className={`w-full px-8 py-6 rounded-[28px] border text-left transition-all flex items-center justify-between group shadow-sm ${formData[currentQuestion.field] === option
                                                         ? "bg-black text-white border-black scale-[1.02]"
-                                                        : "bg-white text-zinc-800 border-transparent hover:border-[#0071e3]/30 hover:shadow-md"
+                                                        : "bg-white text-zinc-800 border-transparent hover:border-[#d3af37]/30 hover:shadow-md"
                                                         }`}
                                                 >
                                                     <span className="font-bold text-lg">{option}</span>
                                                     <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${formData[currentQuestion.field] === option
-                                                        ? "bg-[#0071e3]"
+                                                        ? "bg-[#d3af37]"
                                                         : "bg-zinc-100 group-hover:bg-zinc-200"
                                                         }`}>
                                                         <Check className={`w-4 h-4 transition-all ${formData[currentQuestion.field] === option ? "text-white opacity-100" : "text-transparent"
@@ -270,13 +270,13 @@ export default function FeedbackForm() {
                                                     animate={{ height: "auto", opacity: 1 }}
                                                     className="mt-4 space-y-4"
                                                 >
-                                                    <label className="text-[10px] font-black text-[#0071e3] uppercase tracking-[0.2em] ml-1">Quel budget aviez-vous en tête ?</label>
+                                                    <label className="text-[10px] font-black text-[#d3af37] uppercase tracking-[0.2em] ml-1">Quel budget aviez-vous en tête ?</label>
                                                     <textarea
                                                         value={formData.custom_budget || ""}
                                                         onChange={(e) => setFormData({ ...formData, custom_budget: e.target.value })}
                                                         placeholder="Ex: 250 000 DA avec paiement échelonné..."
                                                         rows={2}
-                                                        className="w-full px-8 py-6 bg-white border border-[#0071e3]/20 rounded-[28px] text-lg text-black focus:border-[#0071e3] transition-all outline-none resize-none font-bold shadow-inner"
+                                                        className="w-full px-8 py-6 bg-white border border-[#d3af37]/20 rounded-[28px] text-lg text-black focus:border-[#d3af37] transition-all outline-none resize-none font-bold shadow-inner"
                                                     />
                                                 </motion.div>
                                             )}
@@ -291,12 +291,12 @@ export default function FeedbackForm() {
                                                     onClick={() => toggleCheckbox(option)}
                                                     className={`w-full px-8 py-6 rounded-[28px] border text-left transition-all flex items-center justify-between group shadow-sm ${formData[currentQuestion.field]?.includes(option)
                                                         ? "bg-black text-white border-black scale-[1.02]"
-                                                        : "bg-white text-zinc-800 border-transparent hover:border-[#0071e3]/30 hover:shadow-md"
+                                                        : "bg-white text-zinc-800 border-transparent hover:border-[#d3af37]/30 hover:shadow-md"
                                                         }`}
                                                 >
                                                     <span className="font-bold text-lg">{option}</span>
                                                     <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${formData[currentQuestion.field]?.includes(option)
-                                                        ? "bg-[#0071e3]"
+                                                        ? "bg-[#d3af37]"
                                                         : "bg-zinc-100 group-hover:bg-zinc-200"
                                                         }`}>
                                                         <Check className={`w-4 h-4 transition-all ${formData[currentQuestion.field]?.includes(option) ? "text-white opacity-100" : "text-transparent"
@@ -326,7 +326,7 @@ export default function FeedbackForm() {
                                                 ? (formData[currentQuestion.field]?.length || 0) < (currentQuestion.minimum_selections || 1)
                                                 : !formData[currentQuestion.field]
                                         )}
-                                        className="bg-[#0071e3] text-white px-10 py-5 rounded-full font-black text-sm uppercase tracking-widest flex items-center gap-3 hover:bg-black hover:scale-105 transition-all disabled:opacity-50 disabled:hover:scale-100 shadow-xl shadow-blue-500/20"
+                                        className="bg-[#d3af37] text-white px-10 py-5 rounded-full font-black text-sm uppercase tracking-widest flex items-center gap-3 hover:bg-black hover:scale-105 transition-all disabled:opacity-50 disabled:hover:scale-100 shadow-xl shadow-[#d3af37]/20"
                                     >
                                         Suivant
                                         <ChevronRight className="w-5 h-5" />
@@ -344,7 +344,7 @@ export default function FeedbackForm() {
                             >
                                 <div className="space-y-4">
                                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-white rounded-full border border-black/5 shadow-sm">
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-[#0071e3]">DERNIÈRE ÉTAPE</span>
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-[#d3af37]">DERNIÈRE ÉTAPE</span>
                                     </div>
                                     <h3 className="text-3xl md:text-4xl font-semibold tracking-tight text-black leading-tight">
                                         Où pouvons-nous vous <span className="text-zinc-300">contacter ?</span>
@@ -353,33 +353,33 @@ export default function FeedbackForm() {
 
                                 <div className="space-y-6">
                                     <div className="space-y-3">
-                                        <label className="text-[10px] font-black text-[#0071e3] uppercase tracking-[0.2em] ml-1">Nom de l'Établissement</label>
+                                        <label className="text-[10px] font-black text-[#d3af37] uppercase tracking-[0.2em] ml-1">Nom de l'Établissement</label>
                                         <input
                                             value={formData.hotel_name || ""}
                                             onChange={(e) => setFormData({ ...formData, hotel_name: e.target.value })}
                                             placeholder="Ex: Grand Hôtel Palace"
-                                            className="w-full px-8 py-6 bg-white border border-transparent rounded-[28px] text-lg text-black focus:border-[#0071e3] transition-all outline-none font-bold shadow-sm"
+                                            className="w-full px-8 py-6 bg-white border border-transparent rounded-[28px] text-lg text-black focus:border-[#d3af37] transition-all outline-none font-bold shadow-sm"
                                         />
                                     </div>
                                     <div className="grid sm:grid-cols-2 gap-6">
                                         <div className="space-y-3">
-                                            <label className="text-[10px] font-black text-[#0071e3] uppercase tracking-[0.2em] ml-1">Téléphone</label>
+                                            <label className="text-[10px] font-black text-[#d3af37] uppercase tracking-[0.2em] ml-1">Téléphone</label>
                                             <input
                                                 value={formData.phone || ""}
                                                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                                 placeholder="+213..."
                                                 type="tel"
-                                                className="w-full px-8 py-6 bg-white border border-transparent rounded-[28px] text-lg text-black focus:border-[#0071e3] transition-all outline-none font-bold shadow-sm"
+                                                className="w-full px-8 py-6 bg-white border border-transparent rounded-[28px] text-lg text-black focus:border-[#d3af37] transition-all outline-none font-bold shadow-sm"
                                             />
                                         </div>
                                         <div className="space-y-3">
-                                            <label className="text-[10px] font-black text-[#0071e3] uppercase tracking-[0.2em] ml-1">Email (Optionnel)</label>
+                                            <label className="text-[10px] font-black text-[#d3af37] uppercase tracking-[0.2em] ml-1">Email (Optionnel)</label>
                                             <input
                                                 value={formData.email || ""}
                                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                                 placeholder="contact@hotel.com"
                                                 type="email"
-                                                className="w-full px-8 py-6 bg-white border border-transparent rounded-[28px] text-lg text-black focus:border-[#0071e3] transition-all outline-none font-bold shadow-sm"
+                                                className="w-full px-8 py-6 bg-white border border-transparent rounded-[28px] text-lg text-black focus:border-[#d3af37] transition-all outline-none font-bold shadow-sm"
                                             />
                                         </div>
                                     </div>

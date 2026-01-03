@@ -19,11 +19,11 @@ const faqs = [
     },
     {
         q: "J'ai déjà un système local, pouvez-vous l'intégrer ?",
-        a: "Absolument. Nous pouvons synchroniser notre solution avec vos outils actuels ou importer vos données pour assurer une transition fluide sans perte d'historique.",
+        a: "Absolument. Nous pouvons synchroniser HOSTRA avec vos outils actuels ou importer vos données pour assurer une transition fluide sans perte d'historique.",
     },
     {
         q: "Pouvez-vous ajouter d'autres modules (cafétéria, etc.) ?",
-        a: "Oui, notre système est évolutif. Nous pouvons développer et intégrer des modules sur mesure pour la gestion de votre cafétéria, buanderie ou tout autre service spécifique.",
+        a: "Oui, HOSTRA est évolutif. Nous pouvons développer et intégrer des modules sur mesure pour la gestion de votre cafétéria, buanderie ou tout autre service spécifique.",
     },
 ];
 
@@ -33,12 +33,12 @@ export default function FAQ() {
     return (
         <section className="py-16 sm:py-24 md:py-32 bg-[#F5F5F7] text-[#1D1D1F]">
             <div className="max-w-3xl mx-auto px-4 sm:px-6">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-10 sm:mb-16 text-center">Questions <span className="text-[#0071e3]">Fréquentes.</span></h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-10 sm:mb-16 text-center">Questions <span className="text-[#d3af37]">Fréquentes.</span></h2>
                 <div className="space-y-4">
                     {faqs.map((faq, idx) => (
                         <div
                             key={idx}
-                            className={`border rounded-3xl transition-all duration-300 bg-white ${openIndex === idx ? "shadow-lg border-blue-100" : "shadow-sm border-zinc-100"
+                            className={`border rounded-3xl transition-all duration-300 bg-white ${openIndex === idx ? "shadow-lg border-[#d3af37]/20" : "shadow-sm border-zinc-100"
                                 }`}
                         >
                             <button
@@ -47,7 +47,7 @@ export default function FAQ() {
                             >
                                 <span className="font-semibold text-base sm:text-lg pr-4 sm:pr-8 text-[#1D1D1F]">{faq.q}</span>
                                 {openIndex === idx ? (
-                                    <Minus className="w-5 h-5 text-[#0071e3] shrink-0" />
+                                    <Minus className="w-5 h-5 text-[#d3af37] shrink-0" />
                                 ) : (
                                     <Plus className="w-5 h-5 text-zinc-400 shrink-0" />
                                 )}

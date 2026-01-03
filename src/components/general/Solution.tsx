@@ -46,9 +46,9 @@ export default function Solution() {
                     variants={textReveal}
                     className="text-center mb-16 sm:mb-24 md:mb-32"
                 >
-                    <span className="text-[#0071e3] font-bold tracking-wider text-xs uppercase mb-2 sm:mb-4 block">La Solution</span>
+                    <span className="text-[#d3af37] font-bold tracking-wider text-xs uppercase mb-2 sm:mb-4 block">La Solution</span>
                     <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-4 sm:mb-6 px-2 sm:px-0">
-                        Une Technologie qui<span className="text-[#0071e3]"> change tout.</span>
+                        HOSTRA : Une Technologie qui<span className="text-[#d3af37]"> change tout.</span>
                     </h2>
                 </motion.div>
 
@@ -61,7 +61,7 @@ export default function Solution() {
                         variants={textReveal}
                         className="flex-1 space-y-6"
                     >
-                        <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-[#0071e3] shadow-sm">
+                        <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-[#d3af37] shadow-sm">
                             <Zap className="w-7 h-7" />
                         </div>
                         <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">Chatbot Intelligent</h3>
@@ -75,7 +75,7 @@ export default function Solution() {
                                 "Notification instantanée"
                             ].map((text, i) => (
                                 <li key={i} className="flex items-center gap-4 text-[#1D1D1F] font-medium text-sm">
-                                    <div className="w-1.5 h-1.5 bg-[#0071e3] rounded-full" />
+                                    <div className="w-1.5 h-1.5 bg-[#d3af37] rounded-full" />
                                     {text}
                                 </li>
                             ))}
@@ -125,8 +125,8 @@ export default function Solution() {
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <div className="flex justify-between text-[11px] font-bold text-[#0071e3] uppercase tracking-wider">
-                                    <span>Notre Solution</span>
+                                <div className="flex justify-between text-[11px] font-bold text-[#d3af37] uppercase tracking-wider">
+                                    <span>HOSTRA</span>
                                     <span>30 Secondes</span>
                                 </div>
                                 <div className="h-3 bg-white rounded-full overflow-hidden shadow-inner">
@@ -135,7 +135,7 @@ export default function Solution() {
                                         whileInView={{ width: "10%" }}
                                         transition={{ duration: 1.5, delay: 0.5, ease: "circOut" }}
                                         viewport={{ once: true }}
-                                        className="h-full bg-[#0071e3]"
+                                        className="h-full bg-[#d3af37]"
                                     />
                                 </div>
                             </div>

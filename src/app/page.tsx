@@ -15,7 +15,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white selection:bg-[#0071e3]/20">
+    <main className="min-h-screen bg-white selection:bg-[#d3af37]/20">
       {/* Always show the onboarding modal on every page load */}
       <OnboardingModal />
 
@@ -44,7 +44,7 @@ export default function Home() {
           </p>
 
           <p className="text-zinc-400 text-[9px] sm:text-[10px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-center px-2">
-            &copy; {new Date().getFullYear()} Système de Réservation Intelligent • Tous droits réservés
+            &copy; {new Date().getFullYear()} HOSTRA • Système de Réservation Intelligent • Tous droits réservés
           </p>
         </div>
       </footer>

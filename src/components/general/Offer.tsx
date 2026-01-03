@@ -12,7 +12,7 @@ const inclusions = [
     { text: "Génération Factures & Contrats", icon: Check },
     { text: "Tableau de Bord Statistique", icon: Check },
     { text: "Formation sur Site incluse", icon: Check },
-    { text: "Système 100% Modifiable", icon: Plus },
+    { text: "HOSTRA 100% Modifiable", icon: Plus },
 ];
 
 export default function Offer() {
@@ -28,12 +28,12 @@ export default function Offer() {
                 >
                     <div className="grid md:grid-cols-[0.9fr_1.1fr]">
                         <div className="p-6 sm:p-10 md:p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-zinc-100 flex flex-col justify-center relative">
-                            <div className="absolute top-0 left-0 w-full h-full bg-blue-50/50 -z-10" />
+                            <div className="absolute top-0 left-0 w-full h-full bg-[#d3af37]/5 -z-10" />
 
                             <div className="mb-8">
-                                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100/50 border border-blue-200 rounded-full">
-                                    <ShieldCheck className="w-4 h-4 text-[#0071e3]" />
-                                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#0071e3]">Offre Partenaire Pilote</span>
+                                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#d3af37]/10 border border-[#d3af37]/20 rounded-full">
+                                    <ShieldCheck className="w-4 h-4 text-[#d3af37]" />
+                                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#d3af37]">Offre Partenaire Pilote</span>
                                 </div>
                             </div>
 
@@ -78,7 +78,7 @@ export default function Offer() {
                                     >
                                         <div className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${item.icon === Plus
                                             ? "bg-[#34C759] text-white"
-                                            : "bg-[#0071e3] text-white"
+                                            : "bg-[#d3af37] text-white"
                                             }`}>
                                             <item.icon className="w-3.5 h-3.5" />
                                         </div>
@@ -90,8 +90,8 @@ export default function Offer() {
                             <div className="pt-6 sm:pt-10 border-t border-zinc-100">
                                 <div className="p-4 sm:p-6 md:p-8 rounded-[20px] sm:rounded-[32px] bg-[#F5F5F7] border border-zinc-200">
                                     <div className="flex items-center gap-3 mb-6">
-                                        <div className="h-4 w-[3px] bg-[#0071e3] rounded-full" />
-                                        <h4 className="text-[11px] font-bold uppercase tracking-widest text-[#0071e3]">Frais Optionnels</h4>
+                                        <div className="h-4 w-[3px] bg-[#d3af37] rounded-full" />
+                                        <h4 className="text-[11px] font-bold uppercase tracking-widest text-[#d3af37]">Frais Optionnels</h4>
                                     </div>
 
                                     <div className="space-y-4">

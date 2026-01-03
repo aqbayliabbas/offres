@@ -74,7 +74,7 @@ export default function DashboardContent({
     };
 
     return (
-        <div className="flex min-h-screen bg-[#FBFBFD] text-[#1D1D1F] font-sans selection:bg-[#0071e3]/10">
+        <div className="flex min-h-screen bg-[#FBFBFD] text-[#1D1D1F] font-sans selection:bg-[#d3af37]/10">
             {/* Mobile Menu Toggle - Positioned to align with content padding */}
             <button
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -99,41 +99,41 @@ export default function DashboardContent({
                         <LayoutGrid className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                        <span className="text-sm font-black tracking-tighter uppercase block">Intelligence</span>
-                        <span className="text-[9px] text-zinc-400 font-bold uppercase tracking-widest leading-none">Core Pro v3</span>
+                        <span className="text-sm font-black tracking-tighter uppercase block">HOSTRA</span>
+                        <span className="text-[9px] text-zinc-400 font-bold uppercase tracking-widest leading-none">Intelligence v3</span>
                     </div>
                 </div>
 
                 <nav className="flex-1 space-y-2">
                     <button
                         onClick={() => { setActiveTab('stats'); setExpandedId(null); setIsSidebarOpen(false); }}
-                        className={`w-full group flex items-center gap-4 px-5 py-4 rounded-xl transition-all duration-300 ${activeTab === 'stats' ? 'bg-[#F2F2F7] text-[#0071e3]' : 'text-zinc-400 hover:text-black hover:bg-[#F2F2F7]/50'}`}
+                        className={`w-full group flex items-center gap-4 px-5 py-4 rounded-xl transition-all duration-300 ${activeTab === 'stats' ? 'bg-[#F2F2F7] text-[#d3af37]' : 'text-zinc-400 hover:text-black hover:bg-[#F2F2F7]/50'}`}
                     >
-                        <BarChart3 className={`w-5 h-5 transition-transform group-hover:scale-110 ${activeTab === 'stats' ? 'text-[#0071e3]' : ''}`} />
+                        <BarChart3 className={`w-5 h-5 transition-transform group-hover:scale-110 ${activeTab === 'stats' ? 'text-[#d3af37]' : ''}`} />
                         <span className="text-xs font-black uppercase tracking-widest">Dashboard</span>
-                        {activeTab === 'stats' && <div className="ml-auto w-1.5 h-1.5 bg-[#0071e3] rounded-full" />}
+                        {activeTab === 'stats' && <div className="ml-auto w-1.5 h-1.5 bg-[#d3af37] rounded-full" />}
                     </button>
                     <button
                         onClick={() => { setActiveTab('leads'); setExpandedId(null); setIsSidebarOpen(false); }}
-                        className={`w-full group flex items-center gap-4 px-5 py-4 rounded-xl transition-all duration-300 ${activeTab === 'leads' ? 'bg-[#F2F2F7] text-[#0071e3]' : 'text-zinc-400 hover:text-black hover:bg-[#F2F2F7]/50'}`}
+                        className={`w-full group flex items-center gap-4 px-5 py-4 rounded-xl transition-all duration-300 ${activeTab === 'leads' ? 'bg-[#F2F2F7] text-[#d3af37]' : 'text-zinc-400 hover:text-black hover:bg-[#F2F2F7]/50'}`}
                     >
-                        <MessageSquare className={`w-5 h-5 transition-transform group-hover:scale-110 ${activeTab === 'leads' ? 'text-[#0071e3]' : ''}`} />
+                        <MessageSquare className={`w-5 h-5 transition-transform group-hover:scale-110 ${activeTab === 'leads' ? 'text-[#d3af37]' : ''}`} />
                         <span className="text-xs font-black uppercase tracking-widest">Leads</span>
-                        {activeTab === 'leads' && <div className="ml-auto w-1.5 h-1.5 bg-[#0071e3] rounded-full" />}
+                        {activeTab === 'leads' && <div className="ml-auto w-1.5 h-1.5 bg-[#d3af37] rounded-full" />}
                     </button>
                     <button
                         onClick={() => { setActiveTab('hotels'); setExpandedId(null); setIsSidebarOpen(false); }}
-                        className={`w-full group flex items-center gap-4 px-5 py-4 rounded-xl transition-all duration-300 ${activeTab === 'hotels' ? 'bg-[#F2F2F7] text-[#0071e3]' : 'text-zinc-400 hover:text-black hover:bg-[#F2F2F7]/50'}`}
+                        className={`w-full group flex items-center gap-4 px-5 py-4 rounded-xl transition-all duration-300 ${activeTab === 'hotels' ? 'bg-[#F2F2F7] text-[#d3af37]' : 'text-zinc-400 hover:text-black hover:bg-[#F2F2F7]/50'}`}
                     >
-                        <Hotel className={`w-5 h-5 transition-transform group-hover:scale-110 ${activeTab === 'hotels' ? 'text-[#0071e3]' : ''}`} />
+                        <Hotel className={`w-5 h-5 transition-transform group-hover:scale-110 ${activeTab === 'hotels' ? 'text-[#d3af37]' : ''}`} />
                         <span className="text-xs font-black uppercase tracking-widest">Annuaire</span>
-                        {activeTab === 'hotels' && <div className="ml-auto w-1.5 h-1.5 bg-[#0071e3] rounded-full" />}
+                        {activeTab === 'hotels' && <div className="ml-auto w-1.5 h-1.5 bg-[#d3af37] rounded-full" />}
                     </button>
                 </nav>
 
                 <div className="mt-auto space-y-6">
                     <div className="p-6 bg-[#F2F2F7] rounded-xl">
-                        <p className="text-[10px] font-black uppercase tracking-widest text-[#0071e3] mb-2">Sync Status</p>
+                        <p className="text-[10px] font-black uppercase tracking-widest text-[#d3af37] mb-2">Sync Status</p>
                         <div className="flex items-center gap-2">
                             <div className="w-2 h-2 bg-[#34C759] rounded-full animate-pulse" />
                             <span className="text-[11px] font-bold">Base Cloud Active</span>
@@ -154,9 +154,9 @@ export default function DashboardContent({
                 {/* Header Section */}
                 <header className="mb-12 md:mb-24">
                     <div className="w-full">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0071e3]/5 rounded-full mb-6">
-                            <Sparkles className="w-3.5 h-3.5 text-[#0071e3]" />
-                            <span className="text-[9px] font-black text-[#0071e3] uppercase tracking-[0.3em]">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#d3af37]/5 rounded-full mb-6">
+                            <Sparkles className="w-3.5 h-3.5 text-[#d3af37]" />
+                            <span className="text-[9px] font-black text-[#d3af37] uppercase tracking-[0.3em]">
                                 {activeTab === 'stats' ? 'Performance Overview' : 'Data Management'}
                             </span>
                         </div>
@@ -174,8 +174,8 @@ export default function DashboardContent({
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16 md:mb-24">
                             <div className="bg-white p-6 sm:p-10 rounded-[32px] border border-black/5 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
                                 <div className="flex items-center gap-3 mb-6">
-                                    <div className="w-8 h-8 rounded-full bg-[#0071e3]/10 flex items-center justify-center">
-                                        <MessageSquare className="w-4 h-4 text-[#0071e3]" />
+                                    <div className="w-8 h-8 rounded-full bg-[#d3af37]/10 flex items-center justify-center">
+                                        <MessageSquare className="w-4 h-4 text-[#d3af37]" />
                                     </div>
                                     <p className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">Leads Qualifiés</p>
                                 </div>

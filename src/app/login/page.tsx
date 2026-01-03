@@ -2,10 +2,10 @@ import { login, signup } from './actions'
 
 export default function LoginPage() {
     return (
-        <div className="min-h-screen bg-white text-[#1D1D1F] font-sans selection:bg-[#0071e3]/20 flex items-center justify-center p-6">
+        <div className="min-h-screen bg-white text-[#1D1D1F] font-sans selection:bg-[#d3af37]/20 flex items-center justify-center p-6">
             {/* Background Decorative Element */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-[#0071e3]/5 blur-[120px] rounded-full" />
+                <div className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-[#d3af37]/5 blur-[120px] rounded-full" />
                 <div className="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-zinc-100 blur-[120px] rounded-full" />
             </div>
 
@@ -14,10 +14,10 @@ export default function LoginPage() {
                     <div className="text-center mb-12">
 
                         <h1 className="text-4xl font-semibold tracking-tighter mb-3 leading-tight">
-                            Bienvenue sur votre <br /> <span className="text-[#0071e3]">Espace Gestion</span>
+                            HOSTRA <br /> <span className="text-[#d3af37]">Espace Gestion</span>
                         </h1>
                         <p className="text-zinc-500 text-sm font-medium">
-                            Accédez à votre espace de gestion personnalisé.
+                            Accédez à votre espace HOSTRA personnalisé.
                         </p>
                     </div>
 
@@ -30,7 +30,7 @@ export default function LoginPage() {
                                     type="email"
                                     required
                                     placeholder="nom@exemple.com"
-                                    className="w-full px-6 py-4 bg-white border border-black/5 rounded-2xl text-[15px] focus:outline-none focus:ring-2 focus:ring-[#0071e3]/20 focus:border-[#0071e3] transition-all placeholder:text-zinc-300"
+                                    className="w-full px-6 py-4 bg-white border border-black/5 rounded-2xl text-[15px] focus:outline-none focus:ring-2 focus:ring-[#d3af37]/20 focus:border-[#d3af37] transition-all placeholder:text-zinc-300"
                                 />
                             </div>
                             <div className="space-y-2">
@@ -40,23 +40,23 @@ export default function LoginPage() {
                                     type="password"
                                     required
                                     placeholder="••••••••"
-                                    className="w-full px-6 py-4 bg-white border border-black/5 rounded-2xl text-[15px] focus:outline-none focus:ring-2 focus:ring-[#0071e3]/20 focus:border-[#0071e3] transition-all placeholder:text-zinc-300"
+                                    className="w-full px-6 py-4 bg-white border border-black/5 rounded-2xl text-[15px] focus:outline-none focus:ring-2 focus:ring-[#d3af37]/20 focus:border-[#d3af37] transition-all placeholder:text-zinc-300"
                                 />
                             </div>
                         </div>
 
                         <div className="flex items-center justify-between px-1">
                             <label className="flex items-center gap-2 cursor-pointer group">
-                                <input type="checkbox" className="w-4 h-4 rounded border-zinc-300 text-[#0071e3] focus:ring-[#0071e3]/20" />
+                                <input type="checkbox" className="w-4 h-4 rounded border-zinc-300 text-[#d3af37] focus:ring-[#d3af37]/20" />
                                 <span className="text-xs font-medium text-zinc-500 group-hover:text-zinc-800 transition-colors">Rester connecté</span>
                             </label>
-                            <a href="#" className="text-xs font-semibold text-[#0071e3] hover:underline underline-offset-4">Oublié ?</a>
+                            <a href="#" className="text-xs font-semibold text-[#d3af37] hover:underline underline-offset-4">Oublié ?</a>
                         </div>
 
                         <div className="pt-4">
                             <button
                                 formAction={login}
-                                className="w-full py-4 bg-[#0071e3] text-white rounded-2xl font-semibold text-[15px] hover:bg-[#0077ed] active:scale-[0.98] transition-all shadow-lg shadow-[#0071e3]/20"
+                                className="w-full py-4 bg-[#d3af37] text-white rounded-2xl font-semibold text-[15px] hover:bg-[#c19d2f] active:scale-[0.98] transition-all shadow-lg shadow-[#d3af37]/20"
                             >
                                 Se connecter
                             </button>

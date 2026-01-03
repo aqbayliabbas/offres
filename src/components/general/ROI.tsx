@@ -16,7 +16,7 @@ export default function ROI() {
                 >
                     <span className="text-zinc-400 font-bold tracking-wider text-xs uppercase mb-4 block">Rentabilité</span>
                     <h2 className="text-4xl md:text-6xl font-semibold tracking-tight mb-6">
-                        Un investissement <br /> <span className="text-[#0071e3]">autofinancé.</span>
+                        Un investissement <br /> <span className="text-[#d3af37]">autofinancé.</span>
                     </h2>
                     <p className="text-zinc-500 font-medium text-xl max-w-2xl mx-auto leading-relaxed">
                         Le système se paye tout seul en quelques mois grâce à la récupération de votre manque à gagner actuel.
@@ -65,33 +65,33 @@ export default function ROI() {
                         whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         viewport={{ once: true }}
-                        className="p-12 rounded-[40px] bg-white shadow-[0_40px_80px_-20px_rgba(0,113,227,0.15)] border border-[#0071e3]/20 relative overflow-hidden"
+                        className="p-12 rounded-[40px] bg-white shadow-[0_40px_80px_-20px_rgba(211,175,55,0.15)] border border-[#d3af37]/20 relative overflow-hidden"
                     >
-                        <div className="absolute inset-x-0 bottom-0 top-0 bg-blue-50/50 -z-10" />
+                        <div className="absolute inset-x-0 bottom-0 top-0 bg-[#d3af37]/5 -z-10" />
                         <div className="flex items-center gap-4 mb-10">
-                            <div className="w-14 h-14 rounded-full bg-[#0071e3] text-white flex items-center justify-center shadow-lg shadow-blue-500/20">
+                            <div className="w-14 h-14 rounded-full bg-[#d3af37] text-white flex items-center justify-center shadow-lg shadow-[#d3af37]/20">
                                 <TrendingUp className="w-7 h-7" />
                             </div>
                             <div>
                                 <h3 className="text-xl font-semibold text-[#1D1D1F]">Avec Système</h3>
-                                <p className="text-xs font-bold text-[#0071e3] tracking-widest uppercase">Profit</p>
+                                <p className="text-xs font-bold text-[#d3af37] tracking-widest uppercase">Profit</p>
                             </div>
                         </div>
 
                         <ul className="space-y-8 mb-12">
                             <li className="flex gap-4 items-start">
-                                <div className="w-2 h-2 bg-[#0071e3] rounded-full mt-2 shrink-0" />
+                                <div className="w-2 h-2 bg-[#d3af37] rounded-full mt-2 shrink-0" />
                                 <p className="text-zinc-600 font-medium text-lg">Réponses instantanées <span className="text-[#1D1D1F] font-semibold">24h/24</span> : Aucun client ne s'échappe.</p>
                             </li>
-                            <li className="flex gap-4 items-start pb-8 border-b border-blue-100">
-                                <div className="w-2 h-2 bg-[#0071e3] rounded-full mt-2 shrink-0" />
+                            <li className="flex gap-4 items-start pb-8 border-b border-[#d3af37]/10">
+                                <div className="w-2 h-2 bg-[#d3af37] rounded-full mt-2 shrink-0" />
                                 <p className="text-zinc-600 font-medium text-lg">Conversion client multipliée par <span className="text-[#1D1D1F] font-semibold">x2</span> dès le 1er mois.</p>
                             </li>
                         </ul>
 
                         <div className="pt-2">
                             <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">Période de Remboursement</p>
-                            <p className="text-5xl font-semibold text-[#0071e3] tracking-tight">4 - 5 MOIS</p>
+                            <p className="text-5xl font-semibold text-[#d3af37] tracking-tight">4 - 5 MOIS</p>
                         </div>
                     </motion.div>
                 </div>

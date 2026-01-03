@@ -33,7 +33,7 @@ export default function HotelCard({ hotel, isOpen, onToggle, onDelete }: { hotel
         <div className={`group relative bg-white rounded-xl border transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isOpen ? 'border-black/10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)]' : 'border-black/5 hover:border-black/10 hover:shadow-xl hover:-translate-y-1'}`}>
             {/* Background Glow Effect */}
             <div className={`absolute inset-0 rounded-xl transition-opacity duration-500 opacity-0 pointer-events-none group-hover:opacity-100 ${isOpen ? 'opacity-30' : ''}`}
-                style={{ background: 'radial-gradient(1200px circle at var(--x) var(--y), rgba(0,113,227,0.03), transparent 40%)' }}
+                style={{ background: 'radial-gradient(1200px circle at var(--x) var(--y), rgba(211,175,55,0.03), transparent 40%)' }}
             />
 
             {/* Header Area */}
@@ -44,7 +44,7 @@ export default function HotelCard({ hotel, isOpen, onToggle, onDelete }: { hotel
                 <div className="flex items-center gap-6">
                     {/* Dynamic Icon Box */}
                     <div className="relative">
-                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-black text-white scale-110 rotate-[10deg]' : 'bg-[#F5F5F7] text-zinc-400 group-hover:bg-[#0071e3]/10 group-hover:text-[#0071e3]'}`}>
+                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-black text-white scale-110 rotate-[10deg]' : 'bg-[#F5F5F7] text-zinc-400 group-hover:bg-[#d3af37]/10 group-hover:text-[#d3af37]'}`}>
                             <Building2 className={`w-7 h-7 transition-transform duration-500 ${isOpen ? 'scale-110' : ''}`} />
                         </div>
                     </div>
@@ -58,7 +58,7 @@ export default function HotelCard({ hotel, isOpen, onToggle, onDelete }: { hotel
                                 <motion.span
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     animate={{ opacity: 1, scale: 1 }}
-                                    className="text-[9px] font-black text-[#0071e3] uppercase tracking-[0.2em] px-2.5 py-1 bg-[#0071e3]/5 rounded-full border border-[#0071e3]/10"
+                                    className="text-[9px] font-black text-[#d3af37] uppercase tracking-[0.2em] px-2.5 py-1 bg-[#d3af37]/5 rounded-full border border-[#d3af37]/10"
                                 >
                                     Vue Active
                                 </motion.span>
@@ -117,15 +117,15 @@ export default function HotelCard({ hotel, isOpen, onToggle, onDelete }: { hotel
                                 {/* Services Grid */}
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-2">
-                                        <div className="w-1 h-4 bg-[#0071e3] rounded-full" />
+                                        <div className="w-1 h-4 bg-[#d3af37] rounded-full" />
                                         <h5 className="text-[10px] font-black uppercase tracking-[0.2em]">Équipements & Services</h5>
                                     </div>
                                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                                         {hotel.services?.map((s: string) => {
                                             const Icon = SERVICE_ICONS[s] || ArrowRight;
                                             return (
-                                                <div key={s} className="px-4 py-3 bg-[#F5F5F7] rounded-lg text-[10px] font-bold border border-black/5 flex items-center gap-3 transition-colors hover:bg-[#0071e3]/5 hover:border-[#0071e3]/10 group/item">
-                                                    <Icon className="w-4 h-4 text-[#0071e3] transition-transform group-hover/item:scale-110" />
+                                                <div key={s} className="px-4 py-3 bg-[#F5F5F7] rounded-lg text-[10px] font-bold border border-black/5 flex items-center gap-3 transition-colors hover:bg-[#d3af37]/5 hover:border-[#d3af37]/10 group/item">
+                                                    <Icon className="w-4 h-4 text-[#d3af37] transition-transform group-hover/item:scale-110" />
                                                     <span className="text-zinc-700 truncate">{s}</span>
                                                 </div>
                                             )

@@ -52,7 +52,7 @@ export default function AdditionalServices() {
                     viewport={{ once: true }}
                     className="text-center mb-12 sm:mb-16 md:mb-24"
                 >
-                    <span className="text-[#0071e3] font-bold tracking-wider text-xs uppercase mb-2 sm:mb-4 block">Expansion</span>
+                    <span className="text-[#d3af37] font-bold tracking-wider text-xs uppercase mb-2 sm:mb-4 block">Expansion</span>
                     <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-4 sm:mb-8">
                         Des services <span className="text-zinc-400">complémentaires.</span>
                     </h2>
@@ -72,7 +72,7 @@ export default function AdditionalServices() {
                             whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }}
                             className="p-6 sm:p-8 md:p-10 rounded-[20px] sm:rounded-[32px] bg-[#F5F5F7] border border-black/5 transition-all duration-300 group relative overflow-hidden"
                         >
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center text-[#0071e3] mb-4 sm:mb-6 md:mb-8 shadow-sm">
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center text-[#d3af37] mb-4 sm:mb-6 md:mb-8 shadow-sm">
                                 <service.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
                             </div>
 
@@ -84,7 +84,7 @@ export default function AdditionalServices() {
                             <ul className="space-y-3">
                                 {service.features.map((feature, i) => (
                                     <li key={i} className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-zinc-400">
-                                        <div className="w-1 h-1 bg-[#0071e3] rounded-full" />
+                                        <div className="w-1 h-1 bg-[#d3af37] rounded-full" />
                                         {feature}
                                     </li>
                                 ))}

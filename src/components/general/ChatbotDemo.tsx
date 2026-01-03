@@ -70,7 +70,7 @@ export default function ChatbotDemo() {
                     <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#34C759] border-4 border-[#F5F5F7] rounded-full" />
                 </div>
                 <div>
-                    <h3 className="text-[#1D1D1F] font-bold text-[13px] tracking-tight">Assistant Hôtel</h3>
+                    <h3 className="text-[#1D1D1F] font-bold text-[13px] tracking-tight">Assistant HOSTRA</h3>
                     <p className="text-zinc-500 text-[10px] font-semibold uppercase tracking-widest mt-0.5">Actif maintenant</p>
                 </div>
             </div>

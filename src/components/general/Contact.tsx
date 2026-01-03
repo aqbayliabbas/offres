@@ -33,7 +33,7 @@ export default function Contact() {
                 >
                     <span className="text-zinc-400 font-bold tracking-widest text-xs uppercase mb-4 sm:mb-6 block">Contact</span>
                     <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter mb-4 sm:mb-8 leading-[0.95] px-2 sm:px-0">
-                        Prêt pour le <br className="sm:hidden" /> <span className="text-[#0071e3]">succès ?</span>
+                        Prêt pour le <br className="sm:hidden" /> <span className="text-[#d3af37]">succès ?</span>
                     </h2>
                 </motion.div>
 
@@ -65,9 +65,9 @@ export default function Contact() {
                                             <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white flex items-center justify-center text-[#1D1D1F]">
                                                 <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                                             </div>
-                                            <span className="text-base sm:text-lg font-medium text-zinc-600 group-hover:text-[#0071e3] transition-colors">+213 799 739 969</span>
+                                            <span className="text-base sm:text-lg font-medium text-zinc-600 group-hover:text-[#d3af37] transition-colors">+213 799 739 969</span>
                                         </div>
-                                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-300 group-hover:text-[#0071e3] -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all" />
+                                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-300 group-hover:text-[#d3af37] -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all" />
                                     </a>
 
                                     <a href="mailto:louenesabbas@win-go.space" className="flex items-center justify-between group py-2 border-b border-zinc-200">
@@ -75,9 +75,9 @@ export default function Contact() {
                                             <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white flex items-center justify-center text-[#1D1D1F]">
                                                 <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                                             </div>
-                                            <span className="text-sm sm:text-base md:text-lg font-medium text-zinc-600 group-hover:text-[#0071e3] transition-colors truncate max-w-[160px] sm:max-w-[200px] md:max-w-none">louenesabbas@win-go.space</span>
+                                            <span className="text-sm sm:text-base md:text-lg font-medium text-zinc-600 group-hover:text-[#d3af37] transition-colors truncate max-w-[160px] sm:max-w-[200px] md:max-w-none">louenesabbas@win-go.space</span>
                                         </div>
-                                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-300 group-hover:text-[#0071e3] -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all" />
+                                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-300 group-hover:text-[#d3af37] -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all" />
                                     </a>
                                 </div>
                             </div>
@@ -101,9 +101,9 @@ export default function Contact() {
                                             <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white flex items-center justify-center text-[#1D1D1F]">
                                                 <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                                             </div>
-                                            <span className="text-base sm:text-lg font-medium text-zinc-600 group-hover:text-[#0071e3] transition-colors">+213 553 50 93 82</span>
+                                            <span className="text-base sm:text-lg font-medium text-zinc-600 group-hover:text-[#d3af37] transition-colors">+213 553 50 93 82</span>
                                         </div>
-                                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-300 group-hover:text-[#0071e3] -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all" />
+                                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-300 group-hover:text-[#d3af37] -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all" />
                                     </a>
 
                                     <a href="mailto:amir.belkahla@auren.ai" className="flex items-center justify-between group py-2 border-b border-zinc-200">
@@ -111,9 +111,9 @@ export default function Contact() {
                                             <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white flex items-center justify-center text-[#1D1D1F]">
                                                 <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                                             </div>
-                                            <span className="text-sm sm:text-base md:text-lg font-medium text-zinc-600 group-hover:text-[#0071e3] transition-colors truncate max-w-[160px] sm:max-w-[200px] md:max-w-none">amir.belkahla59016@gmail.com</span>
+                                            <span className="text-sm sm:text-base md:text-lg font-medium text-zinc-600 group-hover:text-[#d3af37] transition-colors truncate max-w-[160px] sm:max-w-[200px] md:max-w-none">amir.belkahla59016@gmail.com</span>
                                         </div>
-                                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-300 group-hover:text-[#0071e3] -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all" />
+                                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-300 group-hover:text-[#d3af37] -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all" />
                                     </a>
                                 </div>
                             </div>

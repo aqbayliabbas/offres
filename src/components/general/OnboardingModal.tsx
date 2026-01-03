@@ -89,8 +89,8 @@ export default function OnboardingModal() {
                 <div className="overflow-y-auto flex-1 p-5 sm:p-8 md:p-12">
                     <div className="space-y-6 sm:space-y-10">
                         <div className="text-center space-y-2">
-                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#0071e3]">Configuration</span>
-                            <h2 className="text-3xl md:text-4xl font-semibold tracking-tighter">Parlez-nous de <br /> votre <span className="text-[#0071e3]">Établissement</span></h2>
+                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#d3af37]">Configuration</span>
+                            <h2 className="text-3xl md:text-4xl font-semibold tracking-tighter">Parlez-nous de <br /> votre <span className="text-[#d3af37]">Établissement</span></h2>
                         </div>
 
                         <div className="space-y-8">
@@ -103,7 +103,7 @@ export default function OnboardingModal() {
                                         value={hotelName}
                                         onChange={(e) => setHotelName(e.target.value)}
                                         placeholder="Ex: Grand Hôtel Palace"
-                                        className="w-full pl-14 pr-6 py-4 bg-[#F5F5F7] border border-zinc-200 rounded-2xl text-[15px] text-[#1D1D1F] placeholder:text-zinc-400 focus:ring-2 focus:ring-[#0071e3]/20 focus:border-[#0071e3] transition-all font-medium"
+                                        className="w-full pl-14 pr-6 py-4 bg-[#F5F5F7] border border-zinc-200 rounded-2xl text-[15px] text-[#1D1D1F] placeholder:text-zinc-400 focus:ring-2 focus:ring-[#d3af37]/20 focus:border-[#d3af37] transition-all font-medium"
                                     />
                                 </div>
                             </div>
@@ -140,7 +140,7 @@ export default function OnboardingModal() {
                                             type="button"
                                             onClick={() => toggleService(item.name)}
                                             className={`px-4 py-2.5 rounded-full text-xs font-bold transition-all border flex items-center gap-2 ${services.includes(item.name)
-                                                ? 'bg-[#0071e3] text-white border-[#0071e3]'
+                                                ? 'bg-[#d3af37] text-white border-[#d3af37]'
                                                 : 'bg-white text-zinc-500 border-zinc-100 hover:border-zinc-200'
                                                 }`}
                                         >
@@ -157,7 +157,7 @@ export default function OnboardingModal() {
                                         onChange={(e) => setCustomService(e.target.value)}
                                         onKeyPress={(e) => e.key === 'Enter' && addCustomService(e as any)}
                                         placeholder="Ajouter un service (Ex: Spa, Gym...)"
-                                        className="flex-1 px-5 py-3 bg-white border border-zinc-200 rounded-xl text-sm text-[#1D1D1F] placeholder:text-zinc-400 focus:ring-1 focus:ring-[#0071e3] focus:border-[#0071e3] outline-none"
+                                        className="flex-1 px-5 py-3 bg-white border border-zinc-200 rounded-xl text-sm text-[#1D1D1F] placeholder:text-zinc-400 focus:ring-1 focus:ring-[#d3af37] focus:border-[#d3af37] outline-none"
                                     />
                                     <button
                                         type="button"
@@ -189,7 +189,7 @@ export default function OnboardingModal() {
                                         onChange={(e) => setDescription(e.target.value)}
                                         placeholder="Décrivez votre établissement, vos besoins ou laissez un message..."
                                         rows={4}
-                                        className="w-full pl-14 pr-6 py-4 bg-[#F5F5F7] border border-zinc-200 rounded-2xl text-[15px] text-[#1D1D1F] placeholder:text-zinc-400 focus:ring-2 focus:ring-[#0071e3]/20 focus:border-[#0071e3] transition-all font-medium resize-none"
+                                        className="w-full pl-14 pr-6 py-4 bg-[#F5F5F7] border border-zinc-200 rounded-2xl text-[15px] text-[#1D1D1F] placeholder:text-zinc-400 focus:ring-2 focus:ring-[#d3af37]/20 focus:border-[#d3af37] transition-all font-medium resize-none"
                                     />
                                 </div>
                             </div>

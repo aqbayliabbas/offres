@@ -44,7 +44,7 @@ export default function Hero() {
                     variants={itemVariants}
                     className="text-base sm:text-xl md:text-2xl text-zinc-600 max-w-2xl mx-auto font-medium leading-relaxed px-2 sm:px-0"
                 >
-                    Récupérez 40% de vos clients perdus avec une solution de réservation autonome, intelligente et ultra-rapide.
+                    Récupérez 40% de vos clients perdus avec HOSTRA, la solution de réservation autonome, intelligente et ultra-rapide.
                 </motion.p>
 
                 <motion.div
@@ -57,7 +57,7 @@ export default function Hero() {
                         onClick={() => {
                             document.getElementById('problem')?.scrollIntoView({ behavior: 'smooth' });
                         }}
-                        className="h-14 px-8 rounded-full bg-[#0071e3] text-white font-medium text-lg shadow-lg shadow-blue-500/20 hover:bg-[#0077ED] transition-all flex items-center gap-2 cursor-pointer"
+                        className="h-14 px-8 rounded-full bg-[#d3af37] text-white font-medium text-lg shadow-lg shadow-[#d3af37]/20 hover:bg-[#c19d2f] transition-all flex items-center gap-2 cursor-pointer"
                     >
                         Découvrir l'offre
                         <ArrowRight className="w-5 h-5" />
