@@ -183,7 +183,7 @@ export default function FeedbackForm() {
                         whileInView={{ opacity: 1, y: 0 }}
                         className="text-4xl md:text-6xl font-semibold tracking-tight mb-6 text-black"
                     >
-                        Prêt à passer à <span className="text-zinc-300">l'étape suivante ?</span>
+                        Prêt à passer à <br /> <span className="text-zinc-300">l'étape suivante ?</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}

@@ -7,7 +7,7 @@ const inclusions = [
     { text: "Chatbot Intelligent 24/7", icon: Check },
     { text: "Gestion des Comptes Clients", icon: Check },
     { text: "Réservation Express (30s)", icon: Check },
-    { text: "Système de Fidélité", icon: Check },
+    { text: "Espaces partenaire, superviseur et réceptioniste", icon: Check },
     { text: "Panel de Gestion Complet", icon: Check },
     { text: "Génération Factures & Contrats", icon: Check },
     { text: "Tableau de Bord Statistique", icon: Check },
